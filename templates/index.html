@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+
+    <title>5조</title>
+
+    <style>
+        *{
+            font-family: 'Do Hyeon', sans-serif;
+        }
+        .team-name {
+            width: 100%;
+            height: 200px;
+
+            background-color: palegreen;
+            background-position: center;
+            background-size: cover;
+
+            color: black;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .desc {
+            width: 40%;
+
+            margin: 15px auto 15px auto;
+            box-shadow: 0px 0px 3px 0px gray;
+            padding: 20px 40px 20px 40px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .goal {
+            margin: 30px;
+            text-align: center;
+        }
+
+        .member-cards {
+            max-width: 2000px;
+            width: 95%;
+
+            margin: 20px auto 0px auto;
+
+            box-shadow: 0px 0px 3px 0px gray;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card > img {
+            width: 100%;
+            max-width: 330px;
+            height: 330px;
+
+        }
+
+        .comment {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            margin: 20px auto 0px auto;
+        }
+
+        .comment > button {
+            width: 200px;
+            height: 50px;
+
+            background-color: palegreen;
+            color: black;
+
+            border-radius: 50px;
+            border: 1px solid palegreen;
+
+            margin-top: 10px;
+        }
+
+        .comment > button:hover {
+            border: 2px solid black;
+        }
+
+        .comment-form {
+            width: 95%;
+            max-width: 500px;
+            margin: 20px auto 0px auto;
+            padding: 20px;
+            box-shadow: 0px 0px 3px 0px gray;
+
+            display: none;
+        }
+
+        .comment-btns {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+
+            margin-top: 20px;
+        }
+
+        .comment-btns > button {
+            margin-right: 10px;
+        }
+    </style>
+    <script>
+        function show_member1(){
+          window.open("/popup1" ,"_blank", "width=2600,height=2100");
+        }
+        function show_member2(){
+          window.open("/popup2" , "_blank", "width=2600,height=2100");
+        }
+        function show_member3(){
+          window.open("/popup3" , "_blank", "width=2600,height=2100");
+        }
+        function show_member4(){
+          window.open("/popup4" , "_blank", "width=2600,height=2100");
+        }
+        function show_member5(){
+          window.open("/popup5" , "_blank", "width=2600,height=2100");
+        }
+    </script>
+</head>
+<body>
+    <div class="team-name">
+        <h5>어색한 처음, 각자 다른 MBTI
+            색다른 5인이 모여 하나를 이뤘다
+        </h5>
+        <h1 style="font-size: 70px">5색하조🙄</h1>
+    </div>
+
+    <div class="desc">
+        <h5 style="text-align: center">우리 팀의 약속</h5>
+        <hr>
+        <p>1. 어처구니 없는 의견도 아이디어가 될 수 있다! 의견존중 비웃지않기 </p>
+        <p>2. 모르겠는거, 자신없는거 주저없이 말해서 알아가기</p>
+        <p>3. 건강관리 잘해서 아프지않기</p>
+        <p>4. 의견 나오면 리액션하기</p>
+        <p>5. 언제든 나중에라도 지나가다 마주치면 인사해주기</p>
+
+    </div>
+
+        <h3 class="goal">🔥저희의 궁극적인 목표는 '뒤쳐지지않고 수료하기! 5기에서 만나지말기!' 입니다🔥</h3>
+
+
+    <div class="member-cards">
+        <div class="row row-cols-1 row-cols-md-5 g-4" id="cards-box">
+            <div onclick="show_member1()" class="col">
+                <div class="card">
+                    <img src="https://velog.velcdn.com/images/lswoo0705/post/af079949-6adf-429b-9a14-9eaf25e0a9ed/image.jpeg"
+                         class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">이상우</h5>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">#엄지척</li>
+                    </ul>
+                </div>
+            </div>
+            <div onclick="show_member2()" class="col">
+                <div class="card">
+                    <img src="https://velog.velcdn.com/images/8essong30/profile/0de269c7-1432-4a38-9249-2eb6e2f76f23/image.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">이송언</h5>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">#불타올라라 #나으열정이여</li>
+                    </ul>
+                </div>
+            </div>
+            <div onclick="show_member3()" class="col">
+                <div class="card">
+                    <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FSMg66%2FbtrP7UPSZoA%2FY3mXiJe7dwtCN5J6g2ZSXk%2Fimg.jpg"
+                         class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">이영빈</h5>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">#어색하다..</li>
+                    </ul>
+                </div>
+            </div>
+            <div onclick="show_member4()" class="col">
+                <div class="card">
+                    <img src="https://velog.velcdn.com/images/sj_/post/e964955b-79dc-4d05-b5c0-6c398c75e2e1/image.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">조성제</h5>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">#🔥</li>
+                    </ul>
+                </div>
+            </div>
+            <div onclick="show_member5()" class="col">
+                <div class="card">
+                    <img src="https://velog.velcdn.com/images/dripmaster44/post/fbead192-9d15-4a43-9cfb-06ca6091ce09/image.jpg"
+                         class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">진용재</h5>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">#자아도취</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
