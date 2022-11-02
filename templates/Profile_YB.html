@@ -122,6 +122,13 @@
         border: 1px solid;
     }
 
+     .blockquote {
+         display: flex;
+         flex-direction: row;
+         justify-content: space-between;
+         align-items: center;
+     }
+
 
 </style>
 <script>
@@ -143,6 +150,7 @@
                                         <div class="card-body">
                                                 <blockquote class="blockquote mb-0">
                                                             <p>${comment}</p>
+                                                            <button onclick="comment_delete('${comment}')">삭제</button>
                                                 </blockquote>
                                             <hr class="line">
                                         </div>
@@ -163,6 +171,17 @@
                     alert(response['msg'])
                     window.location.reload()
                 }
+            });
+    }
+    function comment_delete(comment){
+        $.ajax({
+            type: 'POST',
+            url: '/delete_YB',
+            data: {comment_give:comment},
+            success: function (response) {
+                alert(response['msg'])
+                window.location.reload()
+            }
             });
     }
 </script>

@@ -80,6 +80,36 @@ def comments_post5():
 
     return jsonify({'msg': '작성 완료!'})
 
+@app.route("/delete_SW", methods=['POST'])
+def delete_comment1():
+    delete_receive = request.form['comment_give']
+    db.comments_SW.delete_one({'comment': delete_receive})
+    return jsonify({'msg': '삭제 완료!'})
+
+@app.route("/delete_SE", methods=['POST'])
+def delete_comment2():
+    delete_receive = request.form['comment_give']
+    db.comments_SE.delete_one({'comment': delete_receive})
+    return jsonify({'msg': '삭제 완료!'})
+
+@app.route("/delete_YB", methods=['POST'])
+def delete_comment3():
+    delete_receive = request.form['comment_give']
+    db.comments_YB.delete_one({'comment': delete_receive})
+    return jsonify({'msg': '삭제 완료!'})
+
+@app.route("/delete_SJ", methods=['POST'])
+def delete_comment4():
+    delete_receive = request.form['comment_give']
+    db.comments_SJ.delete_one({'comment': delete_receive})
+    return jsonify({'msg': '삭제 완료!'})
+
+@app.route("/delete_YJ", methods=['POST'])
+def delete_comment5():
+    delete_receive = request.form['comment_give']
+    db.comments_YJ.delete_one({'comment': delete_receive})
+    return jsonify({'msg': '삭제 완료!'})
+
 @app.route("/comments_SW", methods=["GET"])
 def comments_get1():
     comments_list = list(db.comments_SW.find({}, {'_id': False}))
