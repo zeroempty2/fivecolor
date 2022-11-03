@@ -105,6 +105,11 @@
         background-color: palegreen;
         width: 90px;
     }
+    .btn2 {
+        background-color: white;
+        width: 90px;
+        border-radius: 5px;
+    }
 
      .input-group > button:hover {
          font-size: larger;
@@ -152,7 +157,7 @@
                                         <div class="card-body">
                                                 <blockquote class="blockquote mb-0">
                                                             <p>${comment}</p>
-                                                            <button onclick="comment_delete('${comment}')">삭제</button>
+                                                            <button onclick="delete_comment('${comment}')" type="button"  class="btn2 btn-outline-danger">삭제</button>
                                                 </blockquote>
                                             <hr class="line">
                                         </div>
@@ -162,7 +167,6 @@
             }
         });
     }
-
     function save_comment() {
         let comment_SW = $('#comment').val()
 
@@ -176,7 +180,7 @@
             }
             });
     }
-    function comment_delete(comment){
+    function delete_comment(comment){
         $.ajax({
             type: 'POST',
             url: '/delete_SW',
