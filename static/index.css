@@ -1,0 +1,124 @@
+*{
+    font-family: 'Do Hyeon', sans-serif;
+}
+.team-name {
+    width: 100%;
+    height: 200px;
+
+    background-color: palegreen;
+    background-position: center;
+    background-size: cover;
+
+    color: black;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.desc {
+    width: 40%;
+
+    margin: 15px auto 15px auto;
+    box-shadow: 0px 0px 3px 0px gray;
+    padding: 20px 40px 20px 40px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.goal {
+    margin: 30px;
+    text-align: center;
+}
+
+.member-cards {
+    max-width: 2000px;
+    width: 95%;
+
+    margin: 20px auto 0px auto;
+
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.card > img {
+    width: 330px;
+    height: 330px;
+
+}
+
+.comment {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    margin: 20px auto 0px auto;
+}
+
+.comment > button {
+    width: 200px;
+    height: 50px;
+
+    background-color: palegreen;
+    color: black;
+
+    border-radius: 50px;
+    border: 1px solid palegreen;
+
+    margin-top: 10px;
+}
+
+.comment > button:hover {
+    border: 2px solid black;
+}
+
+.comment-form {
+    width: 95%;
+    max-width: 500px;
+    margin: 20px auto 0px auto;
+    padding: 20px;
+    box-shadow: 0px 0px 3px 0px gray;
+
+    display: none;
+}
+
+.register_btns {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 20px;
+}
+
+.register_btns > button {
+    margin-right: 10px;
+}
+
+.comment-list {
+    width: 70%;
+
+    margin: 20px auto 50px auto;
+    padding: 20px 40px 20px 40px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.blockquote-footer {
+    margin: 5px 0px 5px 0px;
+}
+
+.hidden-comment > textarea {
+    width: 100%;
+    resize: none;
+}
+.form-floating{
+    margin-bottom: 10px;
+}

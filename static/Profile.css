@@ -1,0 +1,192 @@
+*{
+        font-family: 'Do Hyeon', sans-serif;
+    }
+
+ .mytitle {
+     width: 100%;
+     height: 200px;
+
+     background-color: palegreen;
+     background-position: center;
+     background-size: cover;
+
+     color: black;
+
+     display: flex;
+     flex-direction: row;
+     justify-content: center;
+     align-items: center;
+     flex-wrap: wrap;
+
+}
+
+.mytitle > h1 {
+    margin-right: 40px;
+    font-size: 100px;
+}
+
+.list-group {
+    width: 500px;
+    margin-top: 10px;
+}
+
+.img {
+    width: 480px;
+    height: 480px;
+    margin-right: 10px;
+
+    border: 5px palegreen solid;
+    border-radius: 10px;
+}
+
+.box {
+    background-color: whitesmoke;
+    width: 100%;
+    max-width: 2000px;
+    height: 600px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    margin: 5px auto 0px auto;
+}
+
+.cards {
+    margin-left: 10px;
+
+    padding: 10px;
+    border: 5px palegreen solid;
+    border-radius: 10px;
+}
+
+.card-body {
+    flex-wrap: wrap;
+}
+
+.comment {
+
+    width: 900px;
+    margin: 20px auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.input-group {
+    height: 80px;
+    width: 99%;
+    border: 10px palegreen solid;
+    border-radius: 10px;
+}
+.btn {
+    background-color: palegreen;
+    width: 90px;
+}
+.btn2 {
+    background-color: white;
+    width: 90px;
+    border-radius: 5px;
+}
+.btn3 {
+    background-color: black;
+    width: 90px;
+    border-radius: 5px;
+}
+
+ .input-group > button:hover {
+     font-size: larger;
+ }
+.input-group > button:hover {
+    background-color: palegreen;
+}
+
+
+.mycards {
+    width: 100%;
+}
+
+.mycards > .card {
+    border-color: transparent;
+}
+.line {
+    color: green;
+    border: 1px solid;
+}
+
+ .blockquote {
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+     align-items: center;
+ }
+ .cheers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto 0px auto;
+}
+ .cheers > button {
+    width: 200px;
+    height: 50px;
+
+    background-color: palegreen;
+    color: black;
+
+    border-radius: 50px;
+    border: 1px solid palegreen;
+
+    margin-top: 10px;
+}
+.cheers > button:hover {
+    border: 2px solid black;
+}
+.comment-form {
+    width: 95%;
+    max-width: 500px;
+    margin: 20px auto 0px auto;
+    padding: 20px;
+    box-shadow: 0px 0px 3px 0px gray;
+
+    display: none;
+}
+
+.register_btns {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 20px;
+}
+
+.register_btns > button {
+    margin-right: 10px;
+}
+
+.comment-list {
+    width: 70%;
+
+    margin: 20px auto 50px auto;
+    padding: 20px 40px 20px 40px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.blockquote-footer {
+    margin: 5px 0px 5px 0px;
+}
+
+.hidden-comment > textarea {
+    width: 100%;
+    resize: none;
+}
+.form-floating{
+    margin-bottom: 10px;
+}
