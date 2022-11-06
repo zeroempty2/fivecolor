@@ -15,7 +15,7 @@
 
         <link href="{{ url_for('static', filename='Profile.css') }}" rel="stylesheet">
 
-        <script src="{{ url_for('static', filename='Profile.js') }}" > </script>
+        <script src="{{ url_for('static', filename='Profile_YJ.js') }}" > </script>
 
     <title>팀원 소개 페이지_<각자이름></title>
 </head>
@@ -63,19 +63,41 @@
         </div>
     </div>
 
-    <div class="comment">
-        <div class="input-group mb-3">
-            <input id="comment" type="text" class="form-control" placeholder="방명록" aria-label="Recipient's username"
-                   aria-describedby="button-addon2">
-            <button onclick="save_commentYJ()" class="btn" type="button" id="button-addon2">남기기</button>
+     <div class="cheers">
+    <button onclick="open_box()">방명록 남기기</button>
+
+</div>
+    <div class="comment-form" id="comment-box">
+        <div class="form-floating">
+            <input id="name" type="text"  class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+            <label for="name">이름</label>
         </div>
 
-        <div class="mycards" id="comment_box">
-
+        <div class="form-floating">
+            <textarea id="comment" class="form-control" placeholder="Leave a comment here"></textarea>
+            <label for="comment">댓글</label>
         </div>
 
+        <div class="form-floating">
+            <input id="pwd" type="password" maxlength="4"  class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+            <label for="pwd">비밀번호</label>
+        </div>
+
+        <div class="register_btns">
+            <button onclick="save_comment()" type="button" class="btn5 btn-dark">등록</button>
+            <button onclick="close_box()" type="button" class="btn2 btn-outline-dark">닫기</button>
+        </div>
     </div>
+ <div class="comment-list">
+        <div class="card">
+            <div class="card-header">
+                <p id="total-comment"></p>
+            </div>
+            <div id="comment_box" class="card-body">
 
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>

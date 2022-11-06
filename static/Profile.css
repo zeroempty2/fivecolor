@@ -84,18 +84,38 @@
     border-radius: 10px;
 }
 .btn {
-    background-color: palegreen;
+
     width: 90px;
 }
 .btn2 {
     background-color: white;
-    width: 90px;
+
     border-radius: 5px;
+
 }
 .btn3 {
-    background-color: black;
-    width: 90px;
+    background-color: white;
+
     border-radius: 5px;
+}
+.btn4 {
+    background-color: white;
+
+    border-radius: 5px;
+}
+.btn5 {
+    background-color: black;
+
+    border-radius: 5px;
+}
+.btn6 {
+    background-color: white;
+
+    border-radius: 5px;
+}
+
+.stupid{
+
 }
 
  .input-group > button:hover {
@@ -119,10 +139,7 @@
 }
 
  .blockquote {
-     display: flex;
-     flex-direction: row;
-     justify-content: space-between;
-     align-items: center;
+
  }
  .cheers {
     display: flex;
@@ -180,7 +197,9 @@
     justify-content: center;
 }
 .blockquote-footer {
-    margin: 5px 0px 5px 0px;
+    margin: 0px 0px 5px 0px;
+
+
 }
 
 .hidden-comment > textarea {

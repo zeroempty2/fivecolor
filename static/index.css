@@ -120,5 +120,33 @@
     resize: none;
 }
 .form-floating{
+    margin-top: 10px;
     margin-bottom: 10px;
+}
+
+.btn2 {
+    background-color: white;
+
+    border-radius: 5px;
+
+}
+.btn3 {
+    background-color: white;
+
+    border-radius: 5px;
+}
+.btn4 {
+    background-color: white;
+
+    border-radius: 5px;
+}
+.btn5 {
+    background-color: black;
+
+    border-radius: 5px;
+}
+.btn6 {
+    background-color: white;
+
+    border-radius: 5px;
 }

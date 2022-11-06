@@ -23,19 +23,22 @@ def post_comment():
     comment_receive = request.form['comment_give']
     name_receive = request.form['name_give']
     time_receive = request.form['time_give']
+    password_receive = request.form['password_give']
 
     doc = {
         'comment': comment_receive,
         'name': name_receive,
-        'time': time_receive
+        'time': time_receive,
+        'password': password_receive,
     }
-    comment_id = db.comments.insert_one(doc).inserted_id
 
-    return jsonify({'comment_id': str(comment_id)})
+    db.comments.insert_one(doc)
+
+    return jsonify({'msg': '작성 완료'})
 
 @app.route('/comments/delete', methods=['POST'])
 def delete_comment():
-    comment_id_receive = request.form['comment_id_give']
+    comment_id_receive = request.form['comment_give']
     db.comments.delete_one({'_id': ObjectId(comment_id_receive)})
 
     return jsonify({'msg': '댓글 삭제 완료'})
@@ -52,128 +55,241 @@ def update_comment():
 def popup1():
     return render_template('Profile_SW.html')
 
+
+
+@app.route("/comments_SW", methods=["POST"])
+def comment_post1():
+    comment_receive = request.form['comment_give']
+    name_receive = request.form['name_give']
+    time_receive = request.form['time_give']
+    password_receive = request.form['password_give']
+
+    doc = {
+        'comment' : comment_receive,
+        'name' : name_receive,
+        'time' : time_receive,
+        'password' : password_receive,
+    }
+
+    db.comments_SW.insert_one(doc)
+
+    return jsonify({'msg': '작성 완료'})
+
+@app.route('/update_commentSW', methods=['POST'])
+def update_commentSW():
+    comment_id_receive = ObjectId(request.form['comment_id_give'])
+    comment_receive = request.form['comment_give']
+
+    db.comments_SW.update_one({'_id': comment_id_receive}, {'$set': {'comment': comment_receive}})
+
+    return jsonify({'msg': '방명록 수정 완료'})
+
+
+@app.route("/delete_SW", methods=['POST'])
+def delete_comment1():
+    delete_receive = request.form['comment_give']
+    db.comments_SW.delete_one({'_id': ObjectId(delete_receive)})
+    return jsonify({'msg': '삭제 완료!'})
+
+@app.route("/comments_SW", methods=["GET"])
+def comments_get1():
+    comments = list(db.comments_SW.find({}))
+    for comment in comments:
+        comment['_id'] = str(comment['_id'])
+
+    return jsonify({'comments': comments})
+
 @app.route('/popup2')
 def popup2():
     return render_template('Profile_SE.html')
+
+
+
+@app.route("/comments_SE", methods=["POST"])
+def comment_post2():
+    comment_receive = request.form['comment_give']
+    name_receive = request.form['name_give']
+    time_receive = request.form['time_give']
+    password_receive = request.form['password_give']
+
+    doc = {
+        'comment' : comment_receive,
+        'name' : name_receive,
+        'time' : time_receive,
+        'password' : password_receive,
+    }
+
+    db.comments_SE.insert_one(doc)
+
+    return jsonify({'msg': '작성 완료'})
+
+@app.route('/update_commentSE', methods=['POST'])
+def update_commentSE():
+    comment_id_receive = ObjectId(request.form['comment_id_give'])
+    comment_receive = request.form['comment_give']
+
+    db.comments_SE.update_one({'_id': comment_id_receive}, {'$set': {'comment': comment_receive}})
+
+    return jsonify({'msg': '방명록 수정 완료'})
+
+
+@app.route("/delete_SE", methods=['POST'])
+def delete_comment2():
+    delete_receive = request.form['comment_give']
+    db.comments_SE.delete_one({'_id': ObjectId(delete_receive)})
+    return jsonify({'msg': '삭제 완료!'})
+
+@app.route("/comments_SE", methods=["GET"])
+def comments_get2():
+    comments = list(db.comments_SE.find({}))
+    for comment in comments:
+        comment['_id'] = str(comment['_id'])
+
+    return jsonify({'comments': comments})
 
 @app.route('/popup3')
 def popup3():
     return render_template('Profile_YB.html')
 
 
+
+@app.route("/comments_YB", methods=["POST"])
+def comment_post3():
+    comment_receive = request.form['comment_give']
+    name_receive = request.form['name_give']
+    time_receive = request.form['time_give']
+    password_receive = request.form['password_give']
+
+    doc = {
+        'comment' : comment_receive,
+        'name' : name_receive,
+        'time' : time_receive,
+        'password' : password_receive,
+    }
+
+    db.comments_YB.insert_one(doc)
+
+    return jsonify({'msg': '작성 완료'})
+
+@app.route('/update_commentYB', methods=['POST'])
+def update_commentsYB():
+    comment_id_receive = ObjectId(request.form['comment_id_give'])
+    comment_receive = request.form['comment_give']
+
+    db.comments_YB.update_one({'_id': comment_id_receive}, {'$set': {'comment': comment_receive}})
+
+    return jsonify({'msg': '방명록 수정 완료'})
+
+
+@app.route("/delete_YB", methods=['POST'])
+def delete_comment3():
+    delete_receive = request.form['comment_give']
+    db.comments_YB.delete_one({'_id': ObjectId(delete_receive)})
+    return jsonify({'msg': '삭제 완료!'})
+
+@app.route("/comments_YB", methods=["GET"])
+def comments_get3():
+    comments = list(db.comments_YB.find({}))
+    for comment in comments:
+        comment['_id'] = str(comment['_id'])
+
+    return jsonify({'comments': comments})
+
 @app.route('/popup4')
 def popup4():
     return render_template('Profile_SJ.html')
+
+
+
+@app.route("/comments_SJ", methods=["POST"])
+def comment_post4():
+    comment_receive = request.form['comment_give']
+    name_receive = request.form['name_give']
+    time_receive = request.form['time_give']
+    password_receive = request.form['password_give']
+
+    doc = {
+        'comment' : comment_receive,
+        'name' : name_receive,
+        'time' : time_receive,
+        'password' : password_receive,
+    }
+
+    db.comments_SJ.insert_one(doc)
+
+    return jsonify({'msg': '작성 완료'})
+
+@app.route('/update_commentSJ', methods=['POST'])
+def update_commentsSJ():
+    comment_id_receive = ObjectId(request.form['comment_id_give'])
+    comment_receive = request.form['comment_give']
+
+    db.comments_SJ.update_one({'_id': comment_id_receive}, {'$set': {'comment': comment_receive}})
+
+    return jsonify({'msg': '방명록 수정 완료'})
+
+
+@app.route("/delete_SJ", methods=['POST'])
+def delete_comment4():
+    delete_receive = request.form['comment_give']
+    db.comments_SJ.delete_one({'_id': ObjectId(delete_receive)})
+    return jsonify({'msg': '삭제 완료!'})
+
+@app.route("/comments_SJ", methods=["GET"])
+def comments_get4():
+    comments = list(db.comments_SJ.find({}))
+    for comment in comments:
+        comment['_id'] = str(comment['_id'])
+
+    return jsonify({'comments': comments})
 
 @app.route('/popup5')
 def popup5():
     return render_template('Profile_YJ.html')
 
-@app.route("/comments_SW", methods=["POST"])
-def comment_post1():
-    comment_receive = request.form['comment_give']
-    doc = {
-        'comment' : comment_receive,
-    }
-    db.comments_SW.insert_one(doc)
 
-    return jsonify({'msg': '작성 완료!'})
-
-@app.route("/comments_SE", methods=["POST"])
-def comments_post2():
-    comment_receive = request.form['comment_give']
-    doc = {
-        'comment': comment_receive,
-    }
-    db.comments_SE.insert_one(doc)
-
-    return jsonify({'msg': '작성 완료!'})
-
-@app.route("/comments_YB", methods=["POST"])
-def comments_post3():
-    comment_receive = request.form['comment_give']
-    doc = {
-        'comment': comment_receive,
-    }
-    db.comments_YB.insert_one(doc)
-
-    return jsonify({'msg': '작성 완료!'})
-
-@app.route("/comments_SJ", methods=["POST"])
-def comments_post4():
-    comment_receive = request.form['comment_give']
-    doc = {
-        'comment': comment_receive,
-    }
-    db.comments_SJ.insert_one(doc)
-
-    return jsonify({'msg': '작성 완료!'})
 
 @app.route("/comments_YJ", methods=["POST"])
-def comments_post5():
+def comment_post5():
     comment_receive = request.form['comment_give']
+    name_receive = request.form['name_give']
+    time_receive = request.form['time_give']
+    password_receive = request.form['password_give']
+
     doc = {
-        'comment': comment_receive,
+        'comment' : comment_receive,
+        'name' : name_receive,
+        'time' : time_receive,
+        'password' : password_receive,
     }
+
     db.comments_YJ.insert_one(doc)
 
-    return jsonify({'msg': '작성 완료!'})
+    return jsonify({'msg': '작성 완료'})
 
-@app.route("/delete_SW", methods=['POST'])
-def delete_comment1():
-    delete_receive = request.form['comment_give']
-    db.comments_SW.delete_one({'comment': delete_receive})
-    return jsonify({'msg': '삭제 완료!'})
+@app.route('/update_commentYJ', methods=['POST'])
+def update_commentsYJ():
+    comment_id_receive = ObjectId(request.form['comment_id_give'])
+    comment_receive = request.form['comment_give']
 
-@app.route("/delete_SE", methods=['POST'])
-def delete_comment2():
-    delete_receive = request.form['comment_give']
-    db.comments_SE.delete_one({'comment': delete_receive})
-    return jsonify({'msg': '삭제 완료!'})
+    db.comments_YJ.update_one({'_id': comment_id_receive}, {'$set': {'comment': comment_receive}})
 
-@app.route("/delete_YB", methods=['POST'])
-def delete_comment3():
-    delete_receive = request.form['comment_give']
-    db.comments_YB.delete_one({'comment': delete_receive})
-    return jsonify({'msg': '삭제 완료!'})
+    return jsonify({'msg': '방명록 수정 완료'})
 
-@app.route("/delete_SJ", methods=['POST'])
-def delete_comment4():
-    delete_receive = request.form['comment_give']
-    db.comments_SJ.delete_one({'comment': delete_receive})
-    return jsonify({'msg': '삭제 완료!'})
 
 @app.route("/delete_YJ", methods=['POST'])
 def delete_comment5():
     delete_receive = request.form['comment_give']
-    db.comments_YJ.delete_one({'comment': delete_receive})
+    db.comments_YJ.delete_one({'_id': ObjectId(delete_receive)})
     return jsonify({'msg': '삭제 완료!'})
-
-@app.route("/comments_SW", methods=["GET"])
-def comments_get1():
-    comments_list = list(db.comments_SW.find({}, {'_id': False}))
-    return jsonify({'comments': comments_list})
-
-@app.route("/comments_SE", methods=["GET"])
-def comments_get2():
-    comments_list = list(db.comments_SE.find({}, {'_id': False}))
-    return jsonify({'comments': comments_list})
-
-@app.route("/comments_YB", methods=["GET"])
-def comments_get3():
-    comments_list = list(db.comments_YB.find({}, {'_id': False}))
-    return jsonify({'comments': comments_list})
-
-@app.route("/comments_SJ", methods=["GET"])
-def comments_get4():
-    comments_list = list(db.comments_SJ.find({}, {'_id': False}))
-    return jsonify({'comments': comments_list})
 
 @app.route("/comments_YJ", methods=["GET"])
 def comments_get5():
-    comments_list = list(db.comments_YJ.find({}, {'_id': False}))
-    return jsonify({'comments': comments_list})
+    comments = list(db.comments_YJ.find({}))
+    for comment in comments:
+        comment['_id'] = str(comment['_id'])
 
+    return jsonify({'comments': comments})
 
 if __name__ == '__main__':
-    app.run('0.0.0.0', port=5005, debug=True)
+    app.run('0.0.0.0', port=5000, debug=True)
